@@ -10,6 +10,8 @@ double kp =1, ki =20 , kd =0;             // modify for optimal performance
 double input = 0, output = 0, setpoint = 0;
 unsigned long lastTime,now;
 
+volatile long encoderPos = 0, last_pos = 0, lastPos = 0;
+
 PID myPID(&input, &output, &setpoint, kp, ki, kd,DIRECT);
 
 void setup() {
